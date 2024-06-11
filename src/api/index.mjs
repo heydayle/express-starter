@@ -1,6 +1,6 @@
-const express = require('express');
-
-const emojis = require('./emojis');
+import express from "express";
+import emojis from "./emojis.mjs";
+import users from "./users.mjs";
 
 const router = express.Router();
 
@@ -11,5 +11,6 @@ router.get('/', (req, res) => {
 });
 
 router.use('/emojis', emojis);
+router.use('/users', users);
 
-module.exports = router;
+export default router;
